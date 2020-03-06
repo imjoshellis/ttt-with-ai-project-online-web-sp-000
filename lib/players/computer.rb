@@ -75,7 +75,7 @@ module Players
         return "5"
       end
 
-      
+
 
       # Take available corner
       CORNERS.each do |corner|
