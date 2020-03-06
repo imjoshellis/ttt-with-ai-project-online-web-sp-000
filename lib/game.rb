@@ -1,11 +1,6 @@
 class Game
-<<<<<<< HEAD
   attr_accessor :board, :player_1, :player_2
-  attr_reader
-=======
-  attr_accessor
-  attr_reader :board
->>>>>>> 9f3b737f3517c1b459ff6a1fc42ef366a8ac9131
+
 
   WIN_COMBINATIONS = [
     [0,1,2],
