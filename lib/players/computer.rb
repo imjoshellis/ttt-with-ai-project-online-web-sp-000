@@ -41,9 +41,9 @@ module Players
       end
 
       # If a corner is taken, take corner opposite
-      CORNERS.each_with_index do |corner,i|
+      CORNERS.each do |corner|
         if board.taken?(corner)
-          case i
+          case corner
           when "1"
             return CORNERS[3] if board.valid_move?(CORNERS[3])
           when "3"
