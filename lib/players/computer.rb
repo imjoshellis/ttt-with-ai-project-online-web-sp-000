@@ -26,7 +26,21 @@ module Players
    ]
 
     def move(board)
-      # If win combo is 2/3 full, either block or win
+      # If you can win, win
+      WIN_COMBINATIONS.each do |combo|
+        if board.cells[combo[0]] == board.cells[combo[1]] && board.cells[combo[0]] == self.token
+          input = (combo[2] + 1).to_s
+          return input if board.valid_move?(input)
+        elsif board.cells[combo[0]] == board.cells[combo[2]] && board.cells[combo[0]] == self.token
+          input = (combo[1] + 1).to_s
+          return input if board.valid_move?(input)
+        elsif board.cells[combo[1]] == board.cells[combo[2]] && board.cells[combo[2]] == self.token
+          input = (combo[0] + 1).to_s
+          return input if board.valid_move?(input)
+        end
+      end
+
+      # If you can block, block
       WIN_COMBINATIONS.each do |combo|
         if board.cells[combo[0]] == board.cells[combo[1]] && board.cells[combo[0]] != " "
           input = (combo[2] + 1).to_s
