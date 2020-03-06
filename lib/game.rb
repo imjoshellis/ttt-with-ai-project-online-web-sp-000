@@ -13,7 +13,7 @@ class Game
     [6,4,2]
   ]
 
-<<<<<<< HEAD
+
   def initialize(player_1=Players::Human.new("X"),player_2=Players::Human.new("O"),board=Board.new)
     @player_1 = player_1
     @player_2 = player_2
@@ -113,8 +113,3 @@ class Game
     end
   end
 end
-=======
-  def initialize
-    @board = []
-  end
->>>>>>> 9f3b737f3517c1b459ff6a1fc42ef366a8ac9131
