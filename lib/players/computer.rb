@@ -75,17 +75,19 @@ module Players
         return "5"
       end
 
+      
+
+      # Take available corner
+      CORNERS.each do |corner|
+        return corner if board.valid_move?(corner)
+      end
+
       # Take edge next to taken corner
       CORNERS.each_with_index do |corner,i|
         if board.taken?(corner)
           return EDGES[i][0] if board.valid_move?(EDGES[i][0])
           return EDGES[i][1] if board.valid_move?(EDGES[i][1])
         end
-      end
-
-      # Take available corner
-      CORNERS.each do |corner|
-        return corner if board.valid_move?(corner)
       end
 
       # Take next possible spot if nothing above triggers
